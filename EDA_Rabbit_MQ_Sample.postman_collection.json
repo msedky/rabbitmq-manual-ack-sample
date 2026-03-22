@@ -1,0 +1,214 @@
+{
+  "info": {
+    "_postman_id": "2ca21128-dd3c-49ac-90fd-7c7e6da4b229",
+    "name": "EDA_Rabbit_MQ_Sample",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "3568702"
+  },
+  "item": [
+    {
+      "name": "order-service",
+      "item": [
+        {
+          "name": "createOrder",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"customerId\": \"b7633a05-b06a-4f65-a5c0-d08705bf9625\",\r\n    \"customerName\": \"Mohammad Hasan Abdel Gelil\",\r\n    \"customerEmail\": \"mhabdelgelil@email.com\",\r\n    \"orderDetails\": [\r\n        {\r\n            \"productId\": \"7a95b64d-1bd3-4af3-8b6b-629f715f9545\",\r\n            \"productName\":\"Casio Watch\",\r\n            \"productPrice\":55.5,\r\n            \"quantity\":1\r\n        },\r\n        {\r\n            \"productId\": \"b1b2060d-e6f9-46b3-91f7-51686233bae7\",\r\n            \"productName\":\"Red Tie\",\r\n            \"productPrice\":36.75,\r\n            \"quantity\":2\r\n        }\r\n    ]\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8070/api/v1/orders",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8070",
+              "path": [
+                "api",
+                "v1",
+                "orders"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "getOrderById",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8070/api/v1/orders/:orderId",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8070",
+              "path": [
+                "api",
+                "v1",
+                "orders",
+                ":orderId"
+              ],
+              "variable": [
+                {
+                  "key": "orderId",
+                  "value": "3322414a-f814-40a5-8614-a3b4fc28af3a"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "getOrders",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8070/api/v1/orders",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8070",
+              "path": [
+                "api",
+                "v1",
+                "orders"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "notification-service",
+      "item": [
+        {
+          "name": "getNotifications",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8071/api/v1/notifications",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8071",
+              "path": [
+                "api",
+                "v1",
+                "notifications"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "getNotificationById",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8071/api/v1/notifications/:id",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8071",
+              "path": [
+                "api",
+                "v1",
+                "notifications",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "69b45bf8bec4fcae4c18c4eb"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "getNotificationsByOrderId",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8071/api/v1/notifications/order/:orderId",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8071",
+              "path": [
+                "api",
+                "v1",
+                "notifications",
+                "order",
+                ":orderId"
+              ],
+              "variable": [
+                {
+                  "key": "orderId",
+                  "value": "cea94793-eb86-4631-a733-b90befc9868a"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "getNotificationsByCustomerEmail",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8071/api/v1/notifications/customer?email=mhabdelgelil@email.com",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8071",
+              "path": [
+                "api",
+                "v1",
+                "notifications",
+                "customer"
+              ],
+              "query": [
+                {
+                  "key": "email",
+                  "value": "mhabdelgelil@email.com"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+server:
+  port: 8071
+spring:
+  application:
+    name: notification-service
+  rabbitmq:
+    host: ${SPRING_RABBITMQ_HOST:localhost}
+    port: ${SPRING_RABBITMQ_PORT:5672}
+    username: ${SPRING_RABBITMQ_USERNAME:guest}
+    password: ${SPRING_RABBITMQ_PASSWORD:guest}
+  data:
+    mongodb:
+      auto-index-creation: true
+  mongodb:
+    uri: ${SPRING_MONGODB_URI:mongodb://localhost:27017/notification_db}
