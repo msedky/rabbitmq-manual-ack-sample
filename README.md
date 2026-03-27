@@ -109,10 +109,10 @@ flowchart LR
 ## Project Structure
 
 ```text
-EDA_Rabbit_MQ_Sample/
+rabbitmq-manual-ack-sample/
 ├── docker-compose.yml
 ├── README.md
-├── EDA_Rabbit_MQ_Sample.postman_collection.json
+├── rabbitmq-manual-ack-sample.postman_collection.json
 ├── order-service/
 └── notification-service/
 ```

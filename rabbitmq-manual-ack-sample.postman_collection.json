@@ -1,7 +1,7 @@
 {
   "info": {
     "_postman_id": "2ca21128-dd3c-49ac-90fd-7c7e6da4b229",
-    "name": "EDA_Rabbit_MQ_Sample",
+    "name": "rabbitmq-manual-ack-sample",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
     "_exporter_id": "3568702"
   },
