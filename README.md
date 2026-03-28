@@ -1,6 +1,6 @@
-# Event-Driven Microservices with RabbitMQ
+# Event-Driven Microservices with RabbitMQ — Manual Ack/Nack & Message Reliability
 
-This repository demonstrates a simple **Event-Driven Architecture (EDA)** built using **Spring Boot microservices** communicating asynchronously through **RabbitMQ**.
+This repository demonstrates a practical **Event-Driven Architecture (EDA)** with a focus on **message reliability and manual acknowledgment handling** using RabbitMQ.
 
 The project simulates a basic e-commerce flow where creating an order in one service produces an event that is consumed by another service to generate a notification.
 
@@ -17,6 +17,7 @@ The system consists of two microservices:
 
 - **notification-service**
   - consumes `OrderCreatedEvent` messages from RabbitMQ
+  - demonstrates **manual ack/nack handling** for message processing control
   - stores notification data in **MongoDB**
   - exposes REST APIs for querying notifications
 
@@ -103,6 +104,19 @@ flowchart LR
 - Dockerized local development environment
 - Unit testing and integration testing
 - Consumer-based event handling with RabbitMQ listeners
+
+---
+
+## Manual Acknowledgment (Ack/Nack)
+
+This project demonstrates **manual acknowledgment handling** in RabbitMQ consumers instead of relying on auto-ack.
+
+The consumer explicitly controls message lifecycle:
+
+- **Ack (basicAck)** → message processed successfully
+- **Nack (basicNack)** → message failed and can be requeued or rejected
+
+This allows better control over message reliability and failure handling.
 
 ---
 
@@ -338,3 +352,5 @@ This project is a small but practical demonstration of backend engineering conce
 - asynchronous processing
 - separation of concerns across services
 - persistence strategy based on service responsibility
+- manual control over message acknowledgment (ack/nack)
+- understanding message lifecycle in RabbitMQ consumers
